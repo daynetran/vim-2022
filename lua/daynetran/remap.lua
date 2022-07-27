@@ -1,0 +1,11 @@
+local nnoremap = require("daynetran.keymap").nnoremap
+nnoremap("<leader>pv", "<cmd>Ex<CR>")
+nnoremap("<leader>vd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+nnoremap("<leader>f", "<cmd>Telescope find_files<CR>")
+vim.cmd([[nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]])
+vim.cmd([[ nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]])
+vim.cmd([[inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"]])
+vim.cmd([[inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"]])
+vim.cmd([[vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"]])
+vim.cmd([[vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"]])
+print("Remaps reporting for duty.")
